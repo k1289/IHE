@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170407121905) do
+ActiveRecord::Schema.define(version: 20170409174625) do
+
+  create_table "notes", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "content"
+    t.integer  "studentid"
+    t.string   "branchid"
+    t.integer  "likes"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,6 +39,14 @@ ActiveRecord::Schema.define(version: 20170407121905) do
     t.integer  "role",                   default: 3
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "videos", force: :cascade do |t|
+    t.string   "name"
+    t.string   "video"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

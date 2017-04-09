@@ -1,0 +1,40 @@
+<h1>All Notes</h1>
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+
+
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>.
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+	 <th>Content</th>
+         <th>Likes</th>
+         <th> </th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @notes.each do |note| %>
+         
+         <tr>
+            <td><%= note.name %></td>
+            <td><%= note.description %></td>
+	    <td><%= note.content %></td>
+            <td><%= note.likes %></td>
+         </tr>
+         
+      <% end %>
+   </tbody>
+   
+</table>
+<%= link_to 'Back', login_home_path %>
+

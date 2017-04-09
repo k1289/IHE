@@ -1,0 +1,54 @@
+<h1>All Videos</h1>
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+
+
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>.
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+	 <h1>Notes</h1>
+<% if !flash[:notice].blank? %>
+   <div class = "alert alert-info">
+      <%= flash[:notice] %>
+   </div>
+<% end %>
+
+<br />
+
+
+<br />
+<br />
+
+<table class = "table table-bordered table-striped">
+   <thead>.
+      <tr>
+         <th>Name</th>
+         <th>Description</th>
+	 <th>Video</th>
+         <th> </th>
+      </tr>
+   </thead>
+   
+   <tbody>
+      <% @videos.each do |video| %>
+         
+         <tr>
+            <td><%= video.name %></td>
+            <td><%= video.description %></td>
+	    <td><%= video_tag post.video_url.to_s :controls =>true %></td>
+	 </tr>
+         
+      <% end %>
+   </tbody>
+   
+<%= link_to 'Back', login_home_path %>

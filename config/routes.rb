@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+
+
+
+    
+
+  
   resources :notes
+  resources :videos
   devise_for :users
   root 'login#check'
   get 'login/home'

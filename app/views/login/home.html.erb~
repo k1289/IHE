@@ -1,0 +1,5 @@
+<h3> Hi <td><%= current_user.email %></td> </h3>
+<body> Your user ID is <td><%= current_user.id %></td></body>
+<%= link_to 'Upload New Notes', new_note_path %> |
+<%= link_to 'View All Notes', notes_path %> |
+<%= link_to 'Sign out',destroy_user_session_path, :method => :delete  %>
